@@ -7,6 +7,6 @@ As someone passionate about advancements in technology, I've have focused on pro
 ## Portfolio
 For a more in-depth look at my professional journey and a gallery of my past projects, please visit my formal portfolio website:
 
-[Syed Raza's Portfolio](syedmraza.com)
+[Syed Raza's Portfolio](https://syedmraza.com)
 
 
