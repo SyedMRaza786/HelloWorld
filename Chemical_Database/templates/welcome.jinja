@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script src="{{url_for('static', filename='home.js')}}"></script>
+<div class="container">
+    <br/>
+    <div>
+		<img style="height: 120px" src="{{url_for('static', filename='beaker.jpg')}}" class="img-fluid"/>
+        <h2>Inventory management</h2>
+        <h5 style="font-weight: normal;">A platform for researchers, scientists, laboratory technicians to easily search for chemical elements and efficiently oversee laboratory inventory.</h5>
+    </div>
+    <br/>
+    <br/>
+    <div>
+        <h3>Usage</h3>
+        <h5 style="font-weight: normal;">You can search for an elements by their name, properties, lab or discoverer simply by typing in the search box.</h5>
+        <h5 style="font-weight: normal;">You can add new elements to a lab by pressing the "Add" link on the top navigation bar and filling the required information.</h5>
+        <h5 style="font-weight: normal;">You may also remove elements from labs by pressing the "Delete" link and then "Delete" button.</h5>
+        <h5 style="font-weight: normal;">Do edit an item you can navigate to an element and edit various details such as quantity, lab and safety notes.</h5>
+    </div>
+    <br/>
+    <br/>
+    <h3>Most popular elements: </h3>
+    <div class="conatiner">
+        <ul id="popularElements" class="list-group">
+        </ul>
+    </div>
+</div>
+{% endblock %}

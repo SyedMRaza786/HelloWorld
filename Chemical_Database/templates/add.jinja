@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<script defer src="{{url_for('static', filename='add.js')}}"></script>
+<h3 id="error-msg"></h3>
+<div id="success-msg">
+    <h3>New item successfully created.</h3>
+    <a id="viewer">
+        <button class="btn btn-success">View here</button>
+    </a>
+</div>
+<div class="col-6 pt-4">
+    <h2>Add to inventory</h2>
+    <hr/>
+</div>
+<form id="addForm" method="post" action="/add" class="col-6">
+    <div class="form-group">
+        <label for="element">Element</label>
+        <select class="form-control" id="element" name="element">
+            {% for element in elements['elements']%}
+            <option value="{{element.number}}">{{element.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input required type="number" class="form-control" id="quantity" name="quantity" min="0">
+    </div>
+    <div class="form-group">
+        <label for="lab">Lab</label>
+        <input minlength="1" required class="form-control" id="lab" name="lab">
+    </div>
+    <div class="form-group">
+        <label for="notes">Safety Notes</label>
+        <textarea style="height: 120px" minlength="1" required class="form-control" id="notes" name="notes">None</textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+{% endblock %}

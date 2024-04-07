@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+
+<div class="col-6 pt-4">
+    <h2>Delete from inventory</h2>
+    <hr/>
+</div>
+<form method="post" action="/delete" class="col-6">
+    <div class="form-group">
+        <label for="element">Element</label>
+        <select class="form-control" id="element" name="element">
+            {% if elements['elements']|length == 0 %}
+                <option value="-1">None</option>
+            {% else %}
+                {% for element in elements['elements']%}
+                <option value="{{element.number}}">{{element.name}}</option>
+                {% endfor %}
+            {% endif %}
+        </select>
+    </div>
+    <button class="btn btn-danger" type="submit">Delete</button>
+</form>
+
+{% endblock %}

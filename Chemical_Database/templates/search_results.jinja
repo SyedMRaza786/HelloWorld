@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div class="container mb-4 mt-4">
+  {% if elements['elements']|length == 0 %}
+    <h2>No elements found!</h2>
+  {% else %}
+    <div class="row">
+      {% if elements['elements']|length == 1%}
+        <h2>(1) Element found</h2>
+      {% else %}
+        <h2>({{elements['elements']|length}}) Elements found</h2>
+      {% endif %}
+    </div>
+    <div class="row">
+      <ul class="list-group">
+        {% for element in elements['elements'] %}
+        <a href="{{'/view?id=%s'%element['number']}}">
+          <li class="list-group-item">{{element['name']}}</li>
+        </a>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
